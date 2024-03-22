@@ -1,0 +1,111 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 2265ff4..9694e33 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -8,12 +8,3 @@[m [mIn first commit i learned[m
+ - some built-in modules like OS (operating System) , path[m
+ - - OS built in module help us to get info related to our operating system like uptime, memory, release Time etc.[m
+ - - Path built-in module helps us to get automatic directories of some files cuz in different computers the path of system to the file differs according to different users.[m
+[31m-[m
+[31m-## Second Commit[m
+[31m-In second commit I learned[m
+[31m-- what is fs(filesystem) built-in module[m
+[31m-  - we can use fs to read existing files and write to a new file.[m
+[31m-  - There are 2 approaches to do read and write, synchronous and asynchronous.[m
+[31m-    - in synchronous approach there is no callback function, its blocking approach.[m
+[31m-    - in asynchronous approach there is a callback function that provides us error message or result and its a non-blocking approach.[m
+[31m-  -  [m
+[1mdiff --git a/content/first.txt b/content/first.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3d338ef[m
+[1m--- /dev/null[m
+[1m+++ b/content/first.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mthis is first txt file.[m
+\ No newline at end of file[m
+[1mdiff --git a/content/resultAsync.txt b/content/resultAsync.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bfef8ab[m
+[1m--- /dev/null[m
+[1m+++ b/content/resultAsync.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mResult:this is first txt file. this is second txt file.[m
+\ No newline at end of file[m
+[1mdiff --git a/content/resultSync.txt b/content/resultSync.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6129d23[m
+[1m--- /dev/null[m
+[1m+++ b/content/resultSync.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mResult:this is first txt file. this is second txt file.Result:this is first txt file. this is second txt file.[m
+\ No newline at end of file[m
+[1mdiff --git a/content/second.txt b/content/second.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b619718[m
+[1m--- /dev/null[m
+[1m+++ b/content/second.txt[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mthis is second txt file.[m
+\ No newline at end of file[m
+[1mdiff --git a/path-module-5/content/subfolder/test.txt b/content/subfolder/test.txt[m
+[1msimilarity index 100%[m
+[1mrename from path-module-5/content/subfolder/test.txt[m
+[1mrename to content/subfolder/test.txt[m
+[1mdiff --git a/fs-asynch-7.js b/fs-asynch-7.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1078b07[m
+[1m--- /dev/null[m
+[1m+++ b/fs-asynch-7.js[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32m//Asynchronous function giving us famous callback-hell[m
+[32m+[m[32mconst {readFile, writeFile} = require('fs')[m
+[32m+[m
+[32m+[m[32mreadFile('./content/first.txt', 'utf8' , (err,result)=>{[m
+[32m+[m[32m    if(err){[m
+[32m+[m[32m        return;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    const first = result;[m
+[32m+[m[32m    readFile('./content/second.txt','utf8',(err,result)=>{[m
+[32m+[m[32m        if(err){[m
+[32m+[m[32m            console.lof(err);[m
+[32m+[m[32m            return;[m
+[32m+[m[32m        }[m
+[32m+[m[32m        const second = result;[m[41m [m
+[32m+[m[32m        writeFile('./content/resultAsync.txt',`Result:${first} ${second}`, (err,result)=>{[m
+[32m+[m[32m            if(err){[m
+[32m+[m[32m                console.log(err);[m
+[32m+[m[32m                return;[m
+[32m+[m[32m            }[m
+[32m+[m[32m            console.log("async file created",result)[m
+[32m+[m[32m        }) //flag is an option opobject that is used to not overwrite file completely but append the new result into it.[m
+[32m+[m[32m    })[m
+[32m+[m[32m})[m
+\ No newline at end of file[m
+[1mdiff --git a/fs-synch-6.js b/fs-synch-6.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9cc0c81[m
+[1m--- /dev/null[m
+[1m+++ b/fs-synch-6.js[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m//synchronous functions of fs module[m
+[32m+[m[32mconst {readFileSync, writeFileSync} = require('fs')[m
+[32m+[m
+[32m+[m[32mconst first = readFileSync('./content/first.txt','utf8')[m
+[32m+[m[32mconst second = readFileSync('./content/second.txt','utf8')[m
+[32m+[m[32mconsole.log(first,second)[m
+[32m+[m
+[32m+[m[32mwriteFileSync('./content/resultSync.txt',`Result:${first} ${second}`,{flag:'a'}) //flag is an option opobject that is used to not overwrite file completely but append the new result into it.[m
+[1mdiff --git a/path-module-5/path-module.js b/path-module-5.js[m
+[1msimilarity index 92%[m
+[1mrename from path-module-5/path-module.js[m
+[1mrename to path-module-5.js[m
+[1mindex 8b1cd2a..1fc4934 100644[m
+[1m--- a/path-module-5/path-module.js[m
+[1m+++ b/path-module-5.js[m
+[36m@@ -9,4 +9,4 @@[m [mconst base = path.basename(filePath);[m
+ console.log(base);[m
+ [m
+ const absolute = path.resolve(__dirname, "content", "subfolder", "test.txt");[m
+[31m-console.log(absolute);[m
+[32m+[m[32mconsole.log(absolute);[m
+\ No newline at end of file[m
