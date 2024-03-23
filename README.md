@@ -13,7 +13,7 @@ In first commit i learned
 In second commit I learned
 - what is fs(filesystem) built-in module
   - we can use fs to read existing files and write to a new file.
-  - There are 2 approaches to do read and write, synchronous and asynchronous.
-    - in synchronous approach there is no callback function, its blocking approach.
-    - in asynchronous approach there is a callback function that provides us error message or result and its a non-blocking approach.
+  - There are 2 approaches to do read and write or any task in js, synchronous and asynchronous.
+    - in **synchronous approach** there is no callback function, its blocking approach.
+    - in **asynchronous approach** there is a callback function that provides us error message or result and its a non-blocking approach.
   -  
