@@ -21,7 +21,22 @@ In second commit you'll learn
 In third commit you'll learn
 - What is http built-in module.
   - We use http module to setup a web server for our project.
-  - Express is used in its reciprocal but to understand bases we'll use http.
+  - Express is used as its reciprocal but to understand bases we'll use http.
 - What are **npm (packages/modules/dependencies)**
   - These are reusable javascript code snippets for multiple developers for the ease of not doing hard work again and again.
   - All the npm packages are available on npmjs.com, on this website ppl can share or download the packages.
+  - Some npm packages can be installed locally and some globbaly on your machine.
+  - To install globaly means theyu will be available for all of your projects (command: npm -g [packagename])
+  - To install locally means only available for that specific project (command: npm i [packagename])
+
+## Fourth Commit
+In fourth commit you'll learn
+ - What is package.json file and npm commands
+  - Package.json file stores important info about your project like packages/dependencies installed for project etc (command: npm init -y).
+  - In installing packages/dependencies you can install some of them as dev dependencies or simple local dependencies.
+  - For installing dev dependencies just add -D at the end of installing command (npm i nodemon -D)
+  - We use nodemon as dev dependency to use it for production purposes, it will automatically restart your server instead of restarting again and again after every changes made while using node for production.
+  - You can add any run command in "script" object of package.json such as by setting "start":"node index.js", whenever you will run command [npm run start] it will run [node index.js] automatically, no need to write whole node index.js thing again and again.
+  - Folder named "node modules" is not the folder to be copied to anywhere, just use command [npm install] in any project where no "node modules" present, it will install all the packages with the desired versions written in package.json file automatically.
+  - Ctrl+C to terminate any command's work in process.
+  - npm uninstall [packagename] to uninstall the package from your project.
