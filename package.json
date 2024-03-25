@@ -1,0 +1,25 @@
+{
+  "name": "express-learning",
+  "version": "1.0.0",
+  "description": "In first commit you'll learn\r - how to setup the node js enviornment in your system\r - difference between node and browser\r - no document.anyquery or window object and DOM in node\r - How to export modules in node using require method\r - every js file serves as a module by default\r - some built-in modules like OS (operating System) , path\r   - OS built in module help us to get info related to our operating system like uptime, memory, release Time etc.\r   - Path built-in module helps us to get automatic directories of some files cuz in different computers the path of system to the file differs according to different users.",
+  "main": "index.js",
+  "dependencies": {
+    "data-uri-to-buffer": "^4.0.0",
+    "fetch-blob": "^3.1.5",
+    "formdata-polyfill": "^4.0.10",
+    "node-domexception": "^1.0.0",
+    "node-fetch": "^3.3.0",
+    "web-streams-polyfill": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "zainytech": "Zainytech here! Just learning some cool stuff about node and npm packages."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
