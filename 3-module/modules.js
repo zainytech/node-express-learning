@@ -6,7 +6,7 @@
 const names = require("./names.js");
 const sayHi = require("./utils-func.js");
 const data = require("./alternative-flavour.js");
-require("./module-3/mind-grind.js");
+require("./3-module/mind-grind.js");
 console.log(data);
 // console.log(names);
 sayHi("newname");
