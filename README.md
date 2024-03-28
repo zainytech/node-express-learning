@@ -31,7 +31,7 @@ In third commit you'll learn
 
 ## Fourth Commit
 In fourth commit you'll learn
- - What is package.json file and npm commands
+- What is package.json file and npm commands
   - Package.json file stores important info about your project like packages/dependencies installed for project etc (command: npm init -y).
   - In installing packages/dependencies you can install some of them as dev dependencies or simple local dependencies.
   - For installing dev dependencies just add -D at the end of installing command (npm i nodemon -D)
@@ -40,3 +40,12 @@ In fourth commit you'll learn
   - Folder named "node modules" is not the folder to be copied to anywhere, just use command [npm install] in any project where no "node modules" present, it will install all the packages with the desired versions written in package.json file automatically.
   - Ctrl+C to terminate any command's work in process.
   - npm uninstall [packagename] to uninstall the package from your project.
+
+## Fifth Commit
+In fifth commit you'll learn 
+- What is Event Loop
+  - It's a mechanism that handles multiple requests (asynchronous/synchronous) from the clients to give a quick and non-loading response back from the server.
+      - Non-Blocking I/O: When your code makes an asynchronous request (like reading a file or making a network call), the event loop doesn't wait for it to finish. Instead, it sends the request to the operating system and moves on.
+      - Event Queues: The operating system handles these requests in the background. Once one is complete, it sends a notification (event) back to Node.js. This notification is placed in a queue based on its priority.
+      - Processing Events: The event loop constantly checks these queues. When the call stack (where your code is executed) is empty, the event loop pulls the next event from the highest priority queue and executes its associated callback function.
+  - 
